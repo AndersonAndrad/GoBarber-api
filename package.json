@@ -7,8 +7,12 @@
   "author": "_Anderson_Andrade Anderson_Andrade_@Outlook.com",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/server.js",
-    "eslint": "eslint --fix src --ext .js"
+    "start": "nodemon src/server.js && yarn eslint",
+    "eslint": "eslint --fix src --ext .js",
+    "migration": "sequelize migration:create",
+    "migrate": "sequelize db:migrate",
+    "rollback-one": "sequelize db:migrate:undo",
+    "rollback-all": "sequelize db:migrate:undo:all"
   },
   "dependencies": {
     "@types/sequelize": "^4.28.9",
